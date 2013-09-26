@@ -5,9 +5,9 @@
 		clearstatcache(TRUE);
 	endif;
 	
-	$habilitade		= "<span class='success'>Habilitado ✔</span>";
-	$desabilitado	= "<span class='error'>Desabilitado ✘</span>";
-	$error			= false;
+	$habilitado		= "<span class='sucesso'>Habilitado ✔</span>";
+	$desabilitado	= "<span class='erro'>Desabilitado ✘</span>";
+	$erro			= false;
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,7 +23,7 @@
 			table td.fail{color: #911;}
 			table td h1{text-align:center;}
 			table td h3{text-align:center;}
-			.success{color:#2989D8;}
+			.sucesso{color:#2989D8;}
 			.error{color:#900000;}
 			.install{width:650px;left:50%;margin-left:-325px;position:relative;}
 		</style>
@@ -33,35 +33,35 @@
 			<table>
 				<tr>
 					<td colspan="2">
-						<h1 class="success">
+						<h1 class="sucesso">
 							Instalação
 						</h1>
 					</td>
 				</tr>
 				<tr>
 					<td>Versão do PHP: </td>
-					<td><?php echo "<span class='success'>". PHP_VERSION ."</span>"; ?></td>
+					<td><?php echo "<span class='sucesso'>". PHP_VERSION ."</span>"; ?></td>
 				</tr>
 				<tr>
 					<td>MySql: </td>
-					<td><?php if(function_exists('mysql_connect')): echo $habilitade; else: echo $desabilitado; $error = true; endif ?></td>
+					<td><?php if(function_exists('mysql_connect')): echo $habilitado; else: echo $desabilitado; $erro = true; endif ?></td>
 				</tr>
 				<tr>
 					<td>cURL: </td>
-					<td><?php if(extension_loaded('curl')): echo $habilitade; else: echo $desabilitado; $error = true; endif ?></td>
+					<td><?php if(extension_loaded('curl')): echo $habilitado; else: echo $desabilitado; $erro = true; endif ?></td>
 				</tr>
 				<tr>
 					<td>PDO:</td>
-					<td><?php if(class_exists('PDO')): echo $habilitade; else: echo $desabilitado; $error = true; endif ?></td>
+					<td><?php if(class_exists('PDO')): echo $habilitado; else: echo $desabilitado; $erro = true; endif ?></td>
 				</tr>
 				<tr>
 					<td colspan="2">
 						<h3>
 							<?php
-								if($error === false){
-									echo "<span class='success'>Framework instalado com sucesso!</span>";
+								if($erro === false){
+									echo "<span class='sucesso'>Framework instalado com sucesso!</span>";
 								}else{
-									echo "<span class='error'>Por favor verifique os erros para continuar a instalação.</span>";
+									echo "<span class='erro'>Por favor verifique os erros para continuar a instalação.</span>";
 								}
 							?>
 						</h3>
@@ -72,7 +72,7 @@
 	</body>
 </html>
 <?php
-	if($error === false){
+	if($erro === false){
 		//unlink(__FILE__);
 	}
 ?>

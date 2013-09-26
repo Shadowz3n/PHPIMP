@@ -24,7 +24,7 @@
 	mysql_set_charset('UTF8');
 	
 	/* Principais funções */
-	require APPPATH.'bootstrap'.EXT;
+	require DOCROOT.'bootstrap'.EXT;
 	
 	/* Carregar URL 
 echo Request::factory()
