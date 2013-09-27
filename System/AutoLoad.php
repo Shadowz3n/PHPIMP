@@ -4,7 +4,6 @@ class AutoLoad{
 		spl_autoload_register(array($this, 'loader'));
 	}
 	
-	private static function loader($class){
+	private static loader($class);
         require_once($class.EXT);
-    }
 }
