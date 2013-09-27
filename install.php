@@ -24,7 +24,7 @@
 			table td h1{text-align:center;}
 			table td h3{text-align:center;}
 			.sucesso{color:#2989D8;}
-			.error{color:#900000;}
+			.erro{color:#900000;}
 			.install{width:650px;left:50%;margin-left:-325px;position:relative;}
 		</style>
 	</head>
@@ -74,5 +74,7 @@
 <?php
 	if($erro === false){
 		//unlink(__FILE__);
+	}else{
+		exit;
 	}
 ?>
